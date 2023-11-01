@@ -11,7 +11,9 @@ defmodule ChatWeb.Endpoint do
     same_site: "Lax"
   ]
 
-  # socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
+  socket "/socket", ChatWeb.UserSocket,
+    websocket: true,
+    longpool: false
 
   # Serve at "/" the static files from "priv/static" directory.
   #
